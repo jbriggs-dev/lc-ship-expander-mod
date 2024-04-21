@@ -49,7 +49,7 @@ public class TeleportCreatorComponent : UnityEngine.MonoBehaviour
         // Get player camera
         _playerCamera = GetComponentInChildren<Camera>();
         // Make player camera show render planes
-        _playerCamera.LayerCullingShow(1 << ConstantVariables.RenderLayer); // Add hide inside ship to teleport camera
+        _playerCamera.LayerCullingShow(1 << ConstantVariables.RenderPlaneLayer); // Add hide inside ship to teleport camera
         
         
         /*GameObject gameCameraPrefab = UnityBundleHelper.GetCameraContainerPrefab();
@@ -65,7 +65,7 @@ public class TeleportCreatorComponent : UnityEngine.MonoBehaviour
         _cameraInside.tag = "Untagged";
         _cameraInside.aspect = _playerCamera.aspect;
         _cameraInside.LayerCullingShow(1 << ConstantVariables.InsideShipLayer); // Add hide inside ship to teleport camera
-        _cameraInside.LayerCullingShow(1 << ConstantVariables.RenderLayer); // Add hide inside ship to teleport camera
+        _cameraInside.LayerCullingShow(1 << ConstantVariables.RenderPlaneLayer); // Add hide inside ship to teleport camera
         //_cameraInside.cullingMask |= 1 << ConstantVariables.InsideShipLayer; // Add hide inside ship to teleport camera
 
         //SELogger.Log(gameObject, "Disabling Audio Listener on inside camera");
@@ -84,7 +84,7 @@ public class TeleportCreatorComponent : UnityEngine.MonoBehaviour
         _cameraOutside.tag = "Untagged";
         _cameraOutside.aspect = _playerCamera.aspect;
         _cameraOutside.LayerCullingShow(1 << ConstantVariables.InsideShipLayer); // Add hide inside ship to teleport camera
-        _cameraOutside.LayerCullingShow(1 << ConstantVariables.RenderLayer); // Add hide inside ship to teleport camera
+        _cameraOutside.LayerCullingShow(1 << ConstantVariables.RenderPlaneLayer); // Add hide inside ship to teleport camera
         //_cameraOutside.cullingMask |= 1 << ConstantVariables.InsideShipLayer; // Add hide inside ship to teleport camera
         //SELogger.Log(gameObject, "Disabling Audio Listener on inside camera");
         //_cameraOutside.GetComponent<AudioListener>().enabled = false;
@@ -135,7 +135,7 @@ public class TeleportCreatorComponent : UnityEngine.MonoBehaviour
                 // Rotate 180 if flipped
                 localEulerAngles = new Vector3(270, 270, flipped ? 180f : 0)
             },
-            layer = ConstantVariables.RenderLayer
+            layer = ConstantVariables.RenderPlaneLayer
         };
 
         if (flipped)

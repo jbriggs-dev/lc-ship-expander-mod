@@ -2,7 +2,13 @@
 $R2MODMAN_PROFILE_DIR="$Env:R2MODMAN_DIR\LethalCompany\profiles"
 $R2MODMAN_PROFILE_NAME="$Env:R2MODMAN_LETHALCOMPANY_PROFILE"
 
-if (-not $env:R2MODMAN_DIR -or -not $env:R2MODMAN_LETHALCOMPANY_PROFILE ) { 
+if (-not $env:R2MODMAN_DIR) { 
+    Write-Output "R2MODMAN_DIR Environment variable is not set. Please set this to the correct directory"
+    exit
+}
+
+if (-not $env:R2MODMAN_LETHALCOMPANY_PROFILE ) {
+    Write-Output "R2MODMAN_LETHALCOMPANY_PROFILE Environment variable is not set. Please set this to the correct profile"
     exit
 }
 
