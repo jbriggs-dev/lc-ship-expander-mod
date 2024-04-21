@@ -58,6 +58,7 @@ jobs:
             mods
           deps: | # <-- notice this pipe character
             BepInEx-BepInExPack-5.4.21
+            IntegrityChaos-Diversity-2.0.3
             
       - id: get-url
         name: Get download URL

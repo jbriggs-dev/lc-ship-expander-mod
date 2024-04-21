@@ -11,7 +11,7 @@ public class CameraFollowComponent : UnityEngine.MonoBehaviour
     public Transform portal;
     public Transform otherPortal;
 
-    private void LateUpdate()
+    private void Update()
     {
         Vector3 playerOffsetFromPortal = playerCamera.position - otherPortal.position;
         transform.position = portal.position + playerOffsetFromPortal;
